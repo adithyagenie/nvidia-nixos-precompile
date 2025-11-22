@@ -30,6 +30,10 @@
           usePersistenced = true;
         };
       in {
+        _module.args.pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
         packages = {
           inherit nvidia-driver;
           default = nvidia-driver;
