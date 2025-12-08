@@ -18,7 +18,7 @@
 
       perSystem = { system, pkgs, ... }:
       let
-        kernelPackages = pkgs.linuxPackages_6_17;
+        kernelPackages = pkgs.linuxPackages_6_18;
 
         nvidia-driver = kernelPackages.nvidiaPackages.mkDriver {
           version = "590.44.01";
