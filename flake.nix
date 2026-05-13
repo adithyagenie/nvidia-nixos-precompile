@@ -41,7 +41,6 @@
           nvidia-driver-base = nvidia-driver;
           nvidia-driver-open = nvidia-driver.open;
           nvidia-settings = nvidia-driver.settings;
-          obs-studio-cuda = pkgs.obs-studio.override { cudaSupport = true; };
         };
       };
     };
