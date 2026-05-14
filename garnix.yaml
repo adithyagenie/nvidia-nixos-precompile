@@ -1,6 +1,4 @@
 builds:
   include:
-    - 'packages.x86_64-linux.nvidia-driver-base'
-    - 'packages.x86_64-linux.nvidia-driver-open'
-    - 'packages.x86_64-linux.nvidia-settings'
+    - 'packages.x86_64-linux.garnix-ci'
   branch: master
