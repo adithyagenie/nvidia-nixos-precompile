@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: cachix/install-nix-action@v31
+
+      - uses: cachix/cachix-action@v17
+        with:
+          name: nvidia-nixos-precompile
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          skipPush: true
+
+      - name: Build and push to Cachix
+        run: |
+          set -euo pipefail
+          nix build --print-build-logs --print-out-paths \
+            .#nvidia-driver-base .#nvidia-driver-open .#nvidia-settings \
+            | cachix push nvidia-nixos-precompile

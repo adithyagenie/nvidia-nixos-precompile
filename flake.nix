@@ -41,13 +41,6 @@
           nvidia-driver-base = nvidia-driver;
           nvidia-driver-open = nvidia-driver.open;
           nvidia-settings = nvidia-driver.settings;
-
-          # dont parallelize builds - we build in sync.
-          garnix-ci = pkgs.linkFarm "garnix-ci" [
-            { name = "base"; path = nvidia-driver; }
-            { name = "open"; path = nvidia-driver.open; }
-            { name = "settings"; path = nvidia-driver.settings; }
-          ];
         };
       };
     };

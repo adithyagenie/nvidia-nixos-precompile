@@ -1,4 +1,0 @@
-builds:
-  include:
-    - 'packages.x86_64-linux.garnix-ci'
-  branch: master

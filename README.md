@@ -1,17 +1,17 @@
 # Pre-compiled Nvidia Driver
 
-Pre-compiled Nvidia drivers for NixOS via Garnix CI.
+Pre-compiled Nvidia drivers for NixOS, built with GitHub Actions and distributed via Cachix.
 
 ## Usage
 
-### 1. Add Garnix Cache
-Add the Garnix binary cache to your `flake.nix` so Nix downloads the binaries instead of building them:
+### 1. Add Cachix Cache
+Add the Cachix binary cache to your `flake.nix` so Nix downloads the binaries instead of building them:
 
 ```nix
 {
   nixConfig = {
-    extra-substituters = [ "https://cache.garnix.io" ];
-    extra-trusted-public-keys = [ "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=" ];
+    extra-substituters = [ "https://nvidia-nixos-precompile.cachix.org" ];
+    extra-trusted-public-keys = [ "nvidia-nixos-precompile.cachix.org-1:ccc05gMjXr5QcbNVbBxHUD1utFDoYZm219vmW6yjRc8=" ];
   };
 }
 ```
